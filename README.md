@@ -24,6 +24,7 @@ Official specifications and proposal statuses are linked to their original sourc
 - [Ethereum Improvement Proposals (EIPs)](https://eips.ethereum.org/)
 - [Ethereum Request for Comments (ERCs)](https://github.com/ethereum/ercs)
 - [Ethereum.org — EIPs Explained](https://ethereum.org/eips)
+- [Ethereum Magicians](https://ethereum-magicians.org/) — Community discussions about Ethereum proposals and protocol development.
 
 ---
 
