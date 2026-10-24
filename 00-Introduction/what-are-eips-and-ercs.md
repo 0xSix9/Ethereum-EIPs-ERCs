@@ -44,18 +44,20 @@ EIPs serve several related purposes:
 
 An EIP is not automatically a feature in the Ethereum network. A written proposal, an implementation, a deployment, and ecosystem adoption are different milestones.
 
-### Four states that developers must not confuse
+### Four milestones that developers must distinguish
 
 1. **Specified:** the proposal describes behavior. It may still be a draft and could change.
 2. **Implemented:** one or more codebases implement the specification. An implementation may still contain defects or may implement only part of the proposal.
 3. **Activated or deployed:** where relevant, the change has been activated in a network, or a contract implementing a standard has been deployed. For protocol changes this may require coordinated client releases and a network upgrade; an application-level contract standard has a different deployment path.
 4. **Adopted:** wallets, protocols, developers, and users actually rely on it. Adoption is an ecosystem fact, not something proven by a status label alone.
 
+These four milestones are explanatory concepts, not official EIP status labels. The formal proposal statuses are covered in Section 5.
+
 For a Core EIP, implementation by clients and coordination around a network upgrade matter. For an ERC, adoption may mean that contracts implement it and other applications integrate those contracts. Neither path is identical to the other, even though both use a standards process.
 
-## 3. EIP Tracks and Categories
+## 3. EIP Types and Categories
 
-The current taxonomy described in EIP-1 has three top-level tracks. Standards Track proposals are divided into four categories. These categories describe the type of thing being standardized, not a ranking of importance.
+EIP-1 defines three top-level EIP types: Standards Track, Meta, and Informational. Standards Track proposals are further divided into four categories. These labels describe the kind of proposal, not a ranking of importance.
 
 ### Standards Track
 
@@ -66,20 +68,20 @@ A Standards Track proposal defines a change or standard that affects Ethereum im
 - **Interface:** standards for the interfaces through which software interacts with Ethereum, including client APIs/RPC and certain language-level or contract-interface conventions. Wallet, node, tooling, and infrastructure developers should pay attention to relevant interface proposals.
 - **ERC:** application-layer standards and conventions, including contract APIs, token standards, and other conventions used by dapps. Solidity developers and protocol integrators encounter ERCs frequently.
 
-### Meta / Process
+### Meta and Process EIPs
 
-A Meta EIP describes a process surrounding Ethereum or proposes a change to a process, event, tool, or development environment. A Process EIP applies a standards-style process outside the protocol itself. These proposals can still need community agreement; they are not simply optional technical advice in the same way an Informational EIP may be.
+A **Meta EIP** describes a process surrounding Ethereum or proposes a change to a process, event, tool, or development environment. EIP-1 also classifies every Meta EIP as a **Process EIP**. Therefore, `Meta` is the top-level type in the EIP metadata; `Process EIP` is not a fourth top-level type. Process EIPs apply a standards-style process outside the Ethereum protocol itself and may require community agreement. Unlike Informational EIPs, they are not merely optional technical advice that users are always free to ignore.
 
 ### Informational
 
 An Informational EIP documents a design issue, guideline, or information for the community without proposing a new feature. It does not necessarily represent a community recommendation or consensus. Readers should understand its content and context rather than assume the document creates mandatory behavior.
 
-### A category map
+### A map of EIP types and Standards Track categories
 
 ```mermaid
 flowchart TD
     A[Improvement proposal] --> B[Standards Track]
-    A --> C[Meta / Process]
+    A --> C[Meta (also a Process EIP)]
     A --> D[Informational]
     B --> E[Core]
     B --> F[Networking]
@@ -145,23 +147,23 @@ EIP-1 defines statuses for the proposal lifecycle. The status describes a propos
 
 ```mermaid
 flowchart TD
-    A[Idea and early discussion] --> B[Draft]
+    A["Idea (pre-draft; not tracked)"] --> B[Draft]
     B --> C[Review]
     C --> D[Last Call]
     D --> E[Final]
-    D -- Normative changes needed --> C
-    B -. Inactivity for 6+ months .-> F[Stagnant]
-    C -. Inactivity for 6+ months .-> F
-    D -. Inactivity for 6+ months .-> F
-    F -. Reopened .-> B
-    A --> G[Withdrawn]
-    B --> G
+    D -- "Normative changes required" --> C
+    B -. "Inactive for 6+ months" .-> F[Stagnant]
+    C -. "Inactive for 6+ months" .-> F
+    D -. "Inactive for 6+ months" .-> F
+    F -. "Revived to Draft or its previous active status" .-> B
+    B --> G[Withdrawn]
     C --> G
     D --> G
-    H[Living proposal] -. Ongoing updates .-> H
+    F --> G
+    H["Living (special status)"] --> H
 ```
 
-The diagram is conceptual. Withdrawal may happen while a proposal is active, and Living is a special status for documents intended to evolve rather than reach a final state; it is not a mandatory step in the linear path.
+This is a simplified lifecycle, not a mandatory linear path. `Idea` is pre-draft and is not tracked in the repository, so it cannot itself be `Withdrawn`; withdrawal applies to a formal proposal. A proposal may become `Stagnant` after at least six months of inactivity in Draft, Review, or Last Call, and authors or editors may restore it to Draft or its previous active status. `Living` is a special status for documents intended to evolve continuously, not a stage every proposal passes through.
 
 ### Idea
 
