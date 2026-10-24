@@ -4,6 +4,10 @@ A personal collection of Ethereum standards and improvement proposals that catch
 
 This repository is where I keep track of the ideas, designs, and technical proposals I find worth exploring. I add the ones that interest me, study how they work, and document the concepts and insights I want to revisit.
 
+## Start Here
+
+New to Ethereum standards? Begin with the [EIPs and ERCs: A Developer's Guide](00-Introduction/what-are-eips-and-ercs.md), which explains the proposal framework, lifecycle, standards categories, and how to evaluate standards as a developer.
+
 ## What You'll Find Here
 
 - **Interesting Standards** — ERCs and other standards that I find technically valuable.
