@@ -1,6 +1,5 @@
 # EIPs and ERCs: A Developer's Guide to Ethereum Standards
 
-**Recommended path:** `00-Introduction/what-are-eips-and-ercs.md`  
 **Purpose:** A practical introduction to Ethereum's standards process for smart contract, EVM, protocol, and DeFi developers.
 
 > **Terminology note (checked 24 October 2026):** In the EIP taxonomy, ERC remains the application-level category within the Standards Track. The official repositories have, however, recently separated: protocol and general EIPs are maintained in [ethereum/EIPs](https://github.com/ethereum/EIPs), while application-layer ERCs are maintained in [ethereum/ercs](https://github.com/ethereum/ercs). The separation is organizational; it does not make ERCs unrelated to the wider EIP standards framework. Always check the current registry and contribution instructions before submitting a proposal.
