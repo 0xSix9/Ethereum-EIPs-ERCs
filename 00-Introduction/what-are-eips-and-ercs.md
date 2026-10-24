@@ -80,15 +80,15 @@ An Informational EIP documents a design issue, guideline, or information for the
 
 ```mermaid
 flowchart TD
-    A[Improvement proposal] --> B[Standards Track]
-    A --> C[Meta (also a Process EIP)]
-    A --> D[Informational]
-    B --> E[Core]
-    B --> F[Networking]
-    B --> G[Interface]
-    B --> H[ERC: application-layer standards]
-    H --> I[Token and contract APIs]
-    H --> J[Wallet, package, and application conventions]
+    A["Improvement proposal"] --> B["Standards Track"]
+    A --> C["Meta: also a Process EIP"]
+    A --> D["Informational"]
+    B --> E["Core"]
+    B --> F["Networking"]
+    B --> G["Interface"]
+    B --> H["ERC: application-layer standards"]
+    H --> I["Token and contract APIs"]
+    H --> J["Wallet, package, and application conventions"]
 ```
 
 **Important repository detail:** ERC remains a Standards Track category in the taxonomy, but the official authoring repositories have recently split. The [EIPs repository](https://github.com/ethereum/EIPs) directs new ERC work to the [ERCs repository](https://github.com/ethereum/ercs). The categories are conceptually related; the contribution destination is different. The [official EIP-1 document](https://eips.ethereum.org/EIPS/eip-1) is the starting point for understanding the overall proposal framework.
@@ -147,20 +147,20 @@ EIP-1 defines statuses for the proposal lifecycle. The status describes a propos
 
 ```mermaid
 flowchart TD
-    A["Idea (pre-draft; not tracked)"] --> B[Draft]
-    B --> C[Review]
-    C --> D[Last Call]
-    D --> E[Final]
+    A["Idea before formal draft"] --> B["Draft"]
+    B --> C["Review"]
+    C --> D["Last Call"]
+    D --> E["Final"]
     D -- "Normative changes required" --> C
-    B -. "Inactive for 6+ months" .-> F[Stagnant]
-    C -. "Inactive for 6+ months" .-> F
-    D -. "Inactive for 6+ months" .-> F
-    F -. "Revived to Draft or its previous active status" .-> B
-    B --> G[Withdrawn]
+    B -. "Inactive for six months or more" .-> F["Stagnant"]
+    C -. "Inactive for six months or more" .-> F
+    D -. "Inactive for six months or more" .-> F
+    F -. "Revived to an active status" .-> B
+    B --> G["Withdrawn"]
     C --> G
     D --> G
     F --> G
-    H["Living (special status)"] --> H
+    H["Living status"] --> H
 ```
 
 This is a simplified lifecycle, not a mandatory linear path. `Idea` is pre-draft and is not tracked in the repository, so it cannot itself be `Withdrawn`; withdrawal applies to a formal proposal. A proposal may become `Stagnant` after at least six months of inactivity in Draft, Review, or Last Call, and authors or editors may restore it to Draft or its previous active status. `Living` is a special status for documents intended to evolve continuously, not a stage every proposal passes through.
